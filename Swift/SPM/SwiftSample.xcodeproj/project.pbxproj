@@ -22,7 +22,8 @@
 		1FB55F17256605A800486B6F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB55F16256605A700486B6F /* SettingsViewController.swift */; };
 		1FB55F212566078B00486B6F /* AdControlVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB55EF6256604C200486B6F /* AdControlVC.swift */; };
 		1FB55F66256670A100486B6F /* OtherExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB55F65256670A000486B6F /* OtherExtensions.swift */; };
-		1FE8EEDE2E017148006A5F10 /* GFPSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 1FE8EEDD2E017148006A5F10 /* GFPSDK */; };
+		270AA4E02E16721400554661 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 270AA4DF2E16721400554661 /* SnapKit */; };
+		270AA4E32E16728700554661 /* GFPSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 270AA4E22E16728700554661 /* GFPSDK */; };
 		CE097FDB2A138BD000AAB74D /* TableAdControlVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE097FDA2A138BD000AAB74D /* TableAdControlVC.swift */; };
 		CE21A013282CDC54001FD1A3 /* AdUnitIDList.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE21A012282CDC54001FD1A3 /* AdUnitIDList.plist */; };
 		CE3B4D0C2822881400B55921 /* AdTypeViewConroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3B4D0B2822881400B55921 /* AdTypeViewConroller.swift */; };
@@ -124,7 +125,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1FE8EEDE2E017148006A5F10 /* GFPSDK in Frameworks */,
+				270AA4E02E16721400554661 /* SnapKit in Frameworks */,
+				270AA4E32E16728700554661 /* GFPSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,7 +405,8 @@
 			);
 			mainGroup = 1FB55C7A2563B69B00486B6F;
 			packageReferences = (
-				1FE8EED62E016ACD006A5F10 /* XCRemoteSwiftPackageReference "nam-sdk-ios" */,
+				270AA4DE2E16721400554661 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				270AA4E12E16728700554661 /* XCRemoteSwiftPackageReference "nam-sdk-ios" */,
 			);
 			productRefGroup = 1FB55C842563B69B00486B6F /* Products */;
 			projectDirPath = "";
@@ -646,6 +649,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.navercorp.da.gfp.SwiftSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -675,6 +679,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.navercorp.da.gfp.SwiftSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -706,20 +711,33 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		1FE8EED62E016ACD006A5F10 /* XCRemoteSwiftPackageReference "nam-sdk-ios" */ = {
+		270AA4DE2E16721400554661 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/naver/nam-sdk-ios.git";
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+		270AA4E12E16728700554661 /* XCRemoteSwiftPackageReference "nam-sdk-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sodam-k/nam-sdk-ios.git";
 			requirement = {
 				kind = exactVersion;
-				version = "8.7.0-test";
+				version = "8.7.0-test7";
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		1FE8EEDD2E017148006A5F10 /* GFPSDK */ = {
+		270AA4DF2E16721400554661 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1FE8EED62E016ACD006A5F10 /* XCRemoteSwiftPackageReference "nam-sdk-ios" */;
+			package = 270AA4DE2E16721400554661 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		270AA4E22E16728700554661 /* GFPSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 270AA4E12E16728700554661 /* XCRemoteSwiftPackageReference "nam-sdk-ios" */;
 			productName = GFPSDK;
 		};
 /* End XCSwiftPackageProductDependency section */

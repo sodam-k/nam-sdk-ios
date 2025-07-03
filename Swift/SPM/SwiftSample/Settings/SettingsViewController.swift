@@ -30,7 +30,7 @@ final class SettingsViewController: BaseTableVC {
             .displayAgent,
             .useImageCache,
             .clearImageCache,
-            .useNativeTemplate
+//            .useNativeTemplate
         ]),
         Section(title: "App_Settings".localized, rows: [
             .darkMode,
@@ -74,7 +74,7 @@ final class SettingsViewController: BaseTableVC {
         case deviceIp
         case useImageCache
         case clearImageCache
-        case useNativeTemplate
+//        case useNativeTemplate
 
         case timeoutDisplayAd
         case timeoutVideoAd
@@ -99,7 +99,7 @@ final class SettingsViewController: BaseTableVC {
             case .displayAgent: return "Display Agent Type"
             case .useImageCache: return "Image Cache for Native Normal Ad"
             case .clearImageCache: return "Clear Image Cache"
-            case .useNativeTemplate: return "Use Template for Native"
+//            case .useNativeTemplate: return "Use Template for Native"
 
             case .phase: return "Setting_Phase".localized
             case .darkMode: return "Setting_Dark_Mode".localized
@@ -205,14 +205,14 @@ final class SettingsViewController: BaseTableVC {
             }
             return cell
 
-        case .useNativeTemplate:
-            let cell = SwitchCell()
-            cell.configure(withTitle: row.title) {
-                SettingsManager.shared.useNativeTemplate
-            } onSwtichChange: { value in
-                SettingsManager.shared.useNativeTemplate = value
-            }
-            return cell
+//        case .useNativeTemplate:
+//            let cell = SwitchCell()
+//            cell.configure(withTitle: row.title) {
+//                SettingsManager.shared.useNativeTemplate
+//            } onSwtichChange: { value in
+//                SettingsManager.shared.useNativeTemplate = value
+//            }
+//            return cell
 
         case .darkMode:
             let cell = SegmentCell()
@@ -441,7 +441,7 @@ final class SettingsViewController: BaseTableVC {
         case .resetAll:
             resetAlert()
 
-        case .darkMode, .phase, .deviceIp, .useImageCache, .useNativeTemplate, .timeoutDisplayAd, .timeoutVideoAd, .timeoutRewardedAd, .timeoutInterstitialAd, .testModeFacebook, .testModeGoogle, .testModeGFP, .testModeUnity, .sdkVersion:
+        case .darkMode, .phase, .deviceIp, .useImageCache, /*.useNativeTemplate,*/ .timeoutDisplayAd, .timeoutVideoAd, .timeoutRewardedAd, .timeoutInterstitialAd, .testModeFacebook, .testModeGoogle, .testModeGFP, .testModeUnity, .sdkVersion:
             break
         }
 
