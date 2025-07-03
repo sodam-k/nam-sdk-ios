@@ -14,7 +14,7 @@ let package = Package(
         .library(
             name: "GFPSDK",
             type: .static,
-            targets: ["Core", "AdRenderer", "MediationNDA", "MediationNDAVideo", "MediationNDARich"]
+            targets: ["Core", "AdRenderer_Resource", "MediationNDA_Resource", "MediationNDAVideo_Resource"]
         ),
     ],
     dependencies: [
@@ -25,7 +25,7 @@ let package = Package(
         // core
         .binaryTarget(
             name: "Core_Binary",
-            path: "NAMSDK/xcframework/GFPSDK.xcframework"
+            path: "NAMSDK/SPM_xcframework/GFPSDK.xcframework"
         ),
         .binaryTarget (
             name: "OMSDK_Binary",
@@ -44,70 +44,36 @@ let package = Package(
             resources: [
                 .copy("../../resourcebundle/GFPSDKResource.bundle"),
                 .copy("../../xcframework/GFPSDK.xcframework/ios-arm64/GFPSDK.framework/PrivacyInfo.xcprivacy")
-            ],
-            cSettings: [ .define("NAM") ],
-            swiftSettings: [ .define("NAM") ]
-        ),
-
-        // adRenderer
-        .binaryTarget(
-            name: "AdRenderer_Binary",
-            path: "NAMSDK/xcframework/GFPSDKAdRenderer.xcframework"
+            ]
         ),
         .target(
-            name: "AdRenderer",
-            dependencies: ["AdRenderer_Binary", "Core"],
+            name: "AdRenderer_Resource",
             path: "NAMSDK/SPM_Dummy/AdRenderer",
             resources: [
                 .copy("../../resourcebundle/GFPSDKRendererResource.bundle")
             ]
         ),
-
-        // NDA
-        .binaryTarget(
-            name: "MediationNDA_Binary",
-            path: "NAMSDK/xcframework/GFPSDKMediationNDA.xcframework"
-        ),
         .target(
-            name: "MediationNDA",
-            dependencies: ["MediationNDA_Binary", "Core"],
+            name: "MediationNDA_Resource",
             path: "NAMSDK/SPM_Dummy/MediationNDA",
             resources: [
                 .copy("../../resourcebundle/GFPNDAMraidResource.bundle"),
                 .copy("../../resourcebundle/GFPNDANativeResource.bundle")
             ]
         ),
-
-        // NDAVideo
-        .binaryTarget(
-            name: "MediationNDAVideo_Binary",
-            path: "NAMSDK/xcframework/GFPSDKMediationNDAVideo.xcframework"
-        ),
         .target(
-            name: "MediationNDAVideo",
-            dependencies: ["MediationNDAVideo_Binary", "Core", "MediationNDA"],
+            name: "MediationNDAVideo_Resource",
             path: "NAMSDK/SPM_Dummy/MediationNDAVideo",
             resources: [
                 .copy("../../resourcebundle/GFPNDAVideoResource.bundle"),
                 .copy("../../resourcebundle/GFPNDANativeResource.bundle")
             ]
         ),
-
-        // NDARich
-        .binaryTarget(
-            name: "MediationNDARich_Binary",
-            path: "NAMSDK/xcframework/GFPSDKMediationNDARich.xcframework"
-        ),
-        .target(
-            name: "MediationNDARich",
-            dependencies: ["MediationNDARich_Binary", "Core", "MediationNDA", "MediationNDAVideo", "AdRenderer"],
-            path: "NAMSDK/SPM_Dummy/MediationNDARich"
-        ),
-
+        
         // Test
         .testTarget(
             name: "GFPSDKTests",
-            dependencies: ["Core", "AdRenderer", "MediationNDA", "MediationNDAVideo", "MediationNDARich"],
+            dependencies: ["Core", "AdRenderer_Resource", "MediationNDA_Resource", "MediationNDAVideo_Resource"],
             path: "NAMSDK/SPM_Tests"
         )
     ]
