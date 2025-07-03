@@ -5,7 +5,6 @@ import PackageDescription
 
 let package = Package(
     name: "GFPSDK",
-    defaultLocalization: "en",
 
     platforms: [
         .iOS(.v13),
