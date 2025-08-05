@@ -18,13 +18,14 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/robbiehanson/KissXML.git", exact: "5.3.3"),
-        .package(url: "https://github.com/naver/nas-sdk-ios.git", exact: "1.1.2-test")
+        //.package(url: "https://github.com/naver/nas-sdk-ios.git", exact: "1.1.2-test")
+        .package(url: "https://github.com/sodam-k/nas-sdk-ios.git", exact: "1.1.2-test4")
     ],
     targets: [
         // core
         .binaryTarget(
             name: "Core_Binary",
-            path: "NAMSDK/SPM_xcframework/GFPSDK.xcframework"
+            path: "NAMSDK/SPM/xcframework/GFPSDK.xcframework"
         ),
         .binaryTarget (
             name: "OMSDK_Binary",
@@ -39,7 +40,7 @@ let package = Package(
 
                 .product(name: "NaverAdsServices", package: "nas-sdk-ios")
             ],
-            path: "NAMSDK/SPM_Dummy/Core",
+            path: "NAMSDK/SPM/Sources/Core",
             resources: [
                 .copy("../../resourcebundle/GFPSDKResource.bundle"),
                 .copy("../../xcframework/GFPSDK.xcframework/ios-arm64/GFPSDK.framework/PrivacyInfo.xcprivacy")
@@ -47,14 +48,14 @@ let package = Package(
         ),
         .target(
             name: "AdRenderer_Resource",
-            path: "NAMSDK/SPM_Dummy/AdRenderer",
+            path: "NAMSDK/SPM/Sources/AdRenderer",
             resources: [
                 .copy("../../resourcebundle/GFPSDKRendererResource.bundle")
             ]
         ),
         .target(
             name: "MediationNDA_Resource",
-            path: "NAMSDK/SPM_Dummy/MediationNDA",
+            path: "NAMSDK/SPM/Sources/MediationNDA",
             resources: [
                 .copy("../../resourcebundle/GFPNDAMraidResource.bundle"),
                 .copy("../../resourcebundle/GFPNDANativeResource.bundle")
@@ -62,7 +63,7 @@ let package = Package(
         ),
         .target(
             name: "MediationNDAVideo_Resource",
-            path: "NAMSDK/SPM_Dummy/MediationNDAVideo",
+            path: "NAMSDK/SPM/Sources/MediationNDAVideo",
             resources: [
                 .copy("../../resourcebundle/GFPNDAVideoResource.bundle"),
                 .copy("../../resourcebundle/GFPNDANativeResource.bundle")
@@ -73,7 +74,7 @@ let package = Package(
         .testTarget(
             name: "GFPSDKTests",
             dependencies: ["Core", "AdRenderer_Resource", "MediationNDA_Resource", "MediationNDAVideo_Resource"],
-            path: "NAMSDK/SPM_Tests"
+            path: "NAMSDK/SPM/Tests"
         )
     ]
 )
