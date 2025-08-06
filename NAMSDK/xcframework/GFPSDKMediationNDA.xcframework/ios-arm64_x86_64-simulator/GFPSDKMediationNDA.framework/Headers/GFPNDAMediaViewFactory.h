@@ -12,7 +12,6 @@
 #import "GFPNativeAdInfoProtocol.h"
 #import "GFPNativeAdRenderingSetting.h"
 #import "GFPNDAAdMuteView.h"
-#import "GFPAdSkipInfo.h"
 
 @class GFPAdChoiceInfo;
 @class GFPSKAdNetworkInfo;
@@ -23,6 +22,7 @@
 @class GFPAutoPlayInfo;
 @class GFPAdSlotsNativeData;
 @class GFPNativeTemplateOptions;
+@class GFPAdSkipInfo;
 
 NS_ASSUME_NONNULL_BEGIN
 

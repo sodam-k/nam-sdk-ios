@@ -14,8 +14,6 @@ FOUNDATION_EXPORT double GFPSDKVersionNumber;
 //! Project version string for GFPSDK.
 FOUNDATION_EXPORT const unsigned char GFPSDKVersionString[];
 
-// In this header, you should import all the public headers of your framework using statements like #import <GFPSDK/PublicHeader.h>
-
 #import <GFPSDK/GFPAdParam.h>
 #import <GFPSDK/GFPUserParam.h>
 #import <GFPSDK/GFPAPSAdParam.h>
@@ -148,7 +146,68 @@ FOUNDATION_EXPORT const unsigned char GFPSDKVersionString[];
 #import <GFPSDK/GFPNativeDetailInfo.h>
 
 #import <GFPSDK/GFPEventReportDelegate.h>
-
 #import <GFPSDK/GFPAdChoicesData.h>
 
 #import <GFPSDK/GFPPlaceholderHandler.h>
+
+
+#if GFP_SPM
+
+#import <GFPSDK/GFPNDAMRAIDUtil.h>
+#import <GFPSDK/GFPNDAMRAIDAudioProperties.h>
+#import <GFPSDK/GFPResourceUtils.h>
+#import <GFPSDK/GFPNDABannerView+MRAID.h>
+#import <GFPSDK/GFPNDANativeSimpleAd.h>
+#import <GFPSDK/GFPNDAAdMuteReasonView.h>
+#import <GFPSDK/GFPNDABannerView+GLAD.h>
+#import <GFPSDK/GFPNDAJavascriptUtil.h>
+#import <GFPSDK/GFPNDAAdChoiceView.h>
+#import <GFPSDK/GFPNDANativeAdaptor.h>
+#import <GFPSDK/GFPNDAMediaViewFactory.h>
+#import <GFPSDK/GFPNDAFeedbackLoader.h>
+#import <GFPSDK/GFPNDAMediaImageView.h>
+#import <GFPSDK/GFPNDANativeSimpleAdaptor.h>
+#import <GFPSDK/GFPNDAMRAIDPositionProperties.h>
+#import <GFPSDK/GFPNDABannerView+JSTAG.h>
+#import <GFPSDK/GFPNDAMraidRenderSupporter.h>
+#import <GFPSDK/GFPNDAMRAIDJavascriptUtil.h>
+#import <GFPSDK/GFPNDABannerViewDelegate.h>
+#import <GFPSDK/GFPNDAReasonCollectionViewCell.h>
+#import <GFPSDK/GFPNDAMRAIDExpandViewController.h>
+#import <GFPSDK/GFPNDAMRAIDResizeViewManager.h>
+#import <GFPSDK/GFPMediaCropInfo.h>
+#import <GFPSDK/GFPNDAMraidSupportUtil.h>
+#import <GFPSDK/GFPNDAMRAIDExecutor.h>
+#import <GFPSDK/GFPNDAAdPrivacyIconView.h>
+#import <GFPSDK/GFPBannerWebViewConfig.h>
+#import <GFPSDK/GFPNDAAdMuteIconView.h>
+#import <GFPSDK/GFPNDAMRAIDExpandProperties.h>
+#import <GFPSDK/GFPNDAMRAIDResizeView.h>
+#import <GFPSDK/GFPNDANativeNormalAd.h>
+#import <GFPSDK/GFPNDABannerView+Private.h>
+#import <GFPSDK/GFPNDABannerView.h>
+#import <GFPSDK/GFPNDAMRAIDExposeProperties.h>
+#import <GFPSDK/GFPNDANativeTapGesture.h>
+#import <GFPSDK/GFPNativeProviderNDA.h>
+#import <GFPSDK/GFPNDAAdMuteQuestionView.h>
+#import <GFPSDK/GFPNDABannerAdaptor.h>
+#import <GFPSDK/GFPNDAUtils.h>
+#import <GFPSDK/GFPNDAMRAIDResizeProperties.h>
+#import <GFPSDK/GFPNDAMediaThumbnailView.h>
+#import <GFPSDK/GFPNDAAdChoiceViewUtils.h>
+#import <GFPSDK/GFPNDAAdMuteCompleteView.h>
+#import <GFPSDK/GFPNDAAdChoiceResourceUtils.h>
+#import <GFPSDK/GFPNDAMRAIDOrientationProperties.h>
+#import <GFPSDK/GFPNDANativeAdFactory.h>
+#import <GFPSDK/GFPNDAMediaView.h>
+#import <GFPSDK/GFPNDANativeAd.h>
+#import <GFPSDK/GFPNDAReasonCollectionView.h>
+#import <GFPSDK/GFPNDAMraidConfiguration.h>
+#import <GFPSDK/GFPNDANativeVisualUtils.h>
+#import <GFPSDK/GFPNDARichExtendMeta.h>
+#import <GFPSDK/GFPNDASizeUtils.h>
+#import <GFPSDK/GFPSchemeCommand.h>
+#import <GFPSDK/GFPBannerProviderNDA.h>
+#import <GFPSDK/GFPNDAAdMuteView.h>
+
+#endif
